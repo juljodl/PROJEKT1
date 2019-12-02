@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="160.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Wybierz metodę" />
+                        <ChoiceBox fx:id="MetodaChoiceBox" prefWidth="160.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Wpisz odległość [a.u]" />
+                        <TextField fx:id="OdlText" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="160.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Wpisz ekscentryczność" />
+                        <TextField fx:id="EksText" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Wpisz żądaną dokładność" />
+                        <TextField fx:id="DoklText" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Czas orbitalny" />
+                  <TextField fx:id="czasText" onAction="#onczasText" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScatterChart fx:id="chartXY" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis fx:id="xAxisx" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />
+        </yAxis>
+      </ScatterChart>
+   </center>
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnRysuj" mnemonicParsing="false" onAction="#onbtnRysuj" text="Rysuj" />
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#onbtnClear" text="Czyść" />
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#onbtnSave" text="Zapisz" />
+            <TextField fx:id="nazwaPliku" alignment="CENTER" onAction="#onNazwaPliku" promptText="NazwaPliku" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
